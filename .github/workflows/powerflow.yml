@@ -1,0 +1,30 @@
+name: PowerFlow 60m Scan
+
+on:
+  schedule:
+    - cron: '*/15 13-20 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  powerflow-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 라이브러리 설치
+        run: pip install -r ${{ github.workspace }}/requirements.txt
+
+      - name: 🚀 PowerFlow 스캔 실행
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          TICKER_FILE: ${{ github.workspace }}/ticker.txt
+        run: python ${{ github.workspace }}/powerflow_scan.py
