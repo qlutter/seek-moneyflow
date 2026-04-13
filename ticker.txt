@@ -1,0 +1,41 @@
+# One ticker per line is recommended.
+# Blank lines and lines starting with # are ignored.
+# Comma-separated or space-separated values also work.
+GFS
+CALX
+GDS
+VIAV
+VECO
+STM
+IREN
+APLD
+SMCI
+HPE
+ASX
+NTGR
+PENG
+OUST
+CEVA
+WULF
+CORZ
+EXTR
+CIFR
+AEVA
+SDGR
+QUIK
+UMC
+VNET
+SERV
+DNA
+LTRX
+BFLY
+RXRX
+ABSI
+RBBN
+NNOX
+HIVE
+LIDR
+BTBT
+INVZ
+ARBE
+MVIS
